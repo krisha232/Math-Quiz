@@ -14,10 +14,8 @@ function send(){
 
     get_word=document.getElementById("word").value;
     get_word2=document.getElementById("word2").value;
-    answer= parseInt(word)*parseInt(word2);
-    word= get_word.toLowerCase();
-    word2= get_word2.toLowerCase();
-    question="<h4>"+word+"*"+word2+"</h4>";
+    answer1= parseInt(get_word)*parseInt(get_word2);
+    question="<h4>"+get_word+"*"+get_word2+"</h4>";
     input="<br>Answer:<input type='text' id='input_box'>";
     button="<br><br><button class='btn btn-info' onclick='check()'>check</button>";
     row=question+input+button;
@@ -33,17 +31,16 @@ var answer_turn="player2";
 function check(){
 
 get_answer=document.getElementById("input_box").value;
-answer=get_answer.toLowerCase();
-if (answer==answer){
+if (get_answer==answer1){
     if (answer_turn=="player1"){
         player1_score=player1_score+1;
         document.getElementById("player1_score").innerHTML=player1_score;
-    }}
+    }
     else{
         player2_score=player2_score+1;
         document.getElementById("player2_score").innerHTML=player2_score;
         
-    }
+    }}
     if (question_turn=="player1"){
 
         question_turn="player2"
